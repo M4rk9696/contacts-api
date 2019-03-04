@@ -49,6 +49,7 @@ Contact.sync({force: false})
   })
   .catch((err) => {
     logger.error('Failed to create table', err);
+    process.exit(1);
   });
 
 module.exports = Contact;

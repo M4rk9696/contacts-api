@@ -1,0 +1,27 @@
+version: '3'
+services:
+  ui:
+    image: contact-ui:v3
+    ports:
+      - '8080:80'
+    env_file:
+      - ./env/ui.env
+    depends_on:
+      - api
+  api:
+    image: contact-api:v1
+    depends_on:
+      - db
+    env_file:
+      - ./env/api.env
+    restart: on-failure
+  db:
+    image: postgres:9.6
+    volumes:
+      - "./support/db_setup.sql:/docker-entrypoint-initdb.d/init.sql"
+      - "dbdata:/var/lib/postgresql/data"
+    env_file:
+      - ./env/db.env
+
+volumes:
+  dbdata:

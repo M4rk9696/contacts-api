@@ -11,10 +11,10 @@ Simple API service for testing and learning. It exposes REST endpoints to get, c
 ```
 3. Start the app
 ```
-npm install
-npm start
+yarn install
+yarn start
 ```
 
 ## Contributing
 
-Apart from the steps in Up and Running section use `npm test` to run tests and `npm run nodemon` to start the server using [nodemon](https://github.com/remy/nodemon)
+Apart from the steps in Up and Running section use `yarn test` to run tests and `yarn run nodemon` to start the server using [nodemon](https://github.com/remy/nodemon)
